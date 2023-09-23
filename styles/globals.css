@@ -40,3 +40,10 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+/* переопределим стили для кнопок */
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

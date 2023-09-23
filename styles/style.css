@@ -1,5 +1,155 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/* используем подход desktop-first */
+/* переопределять стили для мобильной и планшетной версий будем сразу же */
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+  font-family: var(--main-text-font);
+  font-size: var(----main-text-size);
+  /* зададим глобальный паддинг всй страницы, который есть в макете*/
+  padding: var(--padding-size);
+  width: 100%;
+}
+
+/* фон для тёмного фона */
+.page.theme_dark {
+ background-image: url('../images/cover-image-dark.png');
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: bottom;
+}
+
+/* фон для светлого фона */
+.page.theme_light {
+  background-image: url('../images/cover-image-light.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+ }
+
+.header {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 300px 130px 300px;
+}
+
+.decorated-element-text {
+  color: var(--accent-color);
+  line-height: 25px;
+  position: absolute;
+  inset-inline-end: calc(var(--padding-size) + 10px);
+  inset-block-start: var(--padding-size);
+}
+
+.decorated-element-text::after {
+  content: '';
+  display: inline-block;
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+/* декоративный элемент в шапке */
+.header::before {
+  content: '';
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  position: absolute;
+  inset-inline-end: var(--padding-size);
+  inset-block-start: var(--padding-size);
+  
+}
+
+/* декоративный элемент в шапке */
+/* .header::after {
+  content: '';
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  justify-self: start;
+  grid-row: 3/span 1; 
+} */
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.header__theme-menu-button {
+  inline-size: 70px;
+  block-size: 23px;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  line-height: 18px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: 1px solid var(--accent-color);
+}
+
+@media (width <= 768px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+    gap: 13px;
+    align-items: end;
+  }
+
+  .header {
+    align-items: center;
+  }
+}
+
+.main-title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+  color: #DB00FF;
+  font-weight: 700;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
+  position: relative;
+  inset-inline-start: -18px;
+}
+
+@media (width <= 375px) {
+  .main-title{
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+}
+
+.header__main_text {
+  display: inline-block;
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  /* width: ; */
+  align-self: center;
+  justify-self: end;
+  line-height: 130%;
+}
+
+.header__main_text span {
+  display: block;
+  font-size: 18px;
 }
