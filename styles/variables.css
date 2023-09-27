@@ -11,10 +11,12 @@
   --main-text-font: 'IBM Plex mono';
   --main-text-size: 18px;
   --padding-size: 20px;
+  --no-phone-margin: 80px;
 }
 
 @media (max-width: 380px) {
-  .page {
+  body {
+    --no-phone-margin: 50px;
     --padding-size: 10px;
   }
 }

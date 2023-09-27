@@ -15,7 +15,7 @@
 }
 
 /* фон для тёмного фона */
-.page.theme_dark {
+.page {
  background-image: url('../images/cover-image-dark.png');
  background-attachment: fixed;
  background-repeat: no-repeat;
@@ -62,8 +62,8 @@
   display: block;
   block-size: 25px;
   inline-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--color-decorated);
+  border-block-start: 1px solid var(--color-decorated);
   position: absolute;
   inset-inline-end: var(--padding-size);
   inset-block-start: var(--padding-size);
@@ -76,8 +76,8 @@
   display: block;
   block-size: 25px;
   inline-size: 25px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--color-decorated);
+  border-block-end: 1px solid var(--color-decorated);
   position: relative;
   inset-block-start: -25px;
 }
@@ -91,18 +91,18 @@
 .header__theme-menu-button {
   inline-size: 70px;
   block-size: 23px;
-  color: var(--accent-color);
+  color: var(--color-decorated);
   text-transform: lowercase;
   line-height: 18px;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--color-decorated);
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--color-decorated);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -134,11 +134,17 @@
   align-self: center;
   position: relative;
   inset-inline-start: -18px;
+  line-height: 82.5%;
 }
 
 @media (width <= 380px) {
+  .header {
+    grid-template-rows: 228px 190px 228px;
+  }
+  
   .main-title{
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    inset-inline-start: 0;
   }
 }
 
@@ -182,6 +188,13 @@
   font-size: 18px;
   font-weight: 700;
   grid-row: 1/ span 2;
+}
+
+@media (max-width: 770px) {
+  .difficulties {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+  }
 }
 
 @media (max-width: 380px) {
@@ -290,4 +303,126 @@ a:focus-visible {
   .concentration .section-title {
     grid-row: 1/ span 1;
   }
+}
+
+.pictures {
+  margin-block-start: var(--no-phone-margin);
+}
+
+.pictures-grid {
+  margin-block-start: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(192px, 260px) minmax(230px, 315px) minmax(318px, 428px);
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pictures-grid div:nth-child(1) {
+  grid-row: 1/ span 1;
+  grid-column: 1/ span 2;
+}
+
+.pictures-grid div:nth-child(2) {
+  grid-row: 1/ span 2;
+  grid-column: 3/ span 1;
+}
+
+.pictures-grid div:nth-child(3) {
+  grid-row: 2/ span 2;
+  grid-column: 1/ span 1;
+}
+
+.pictures-grid div:nth-child(-2) {
+  grid-row: 2/ span 1;
+  grid-column: 2/ span 1;
+}
+
+.pictures-grid div:last-child {
+  grid-row: 3 / span 1;
+  grid-column: 2/ span 2;
+}
+
+@media (max-width: 380px) {
+  .pictures-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1, auto);
+    grid-auto-rows: 355px 237px;
+    gap: 10px;
+    margin-block-start: 10px;
+  }
+  
+  .pictures-grid div:nth-child(1) {
+    grid-row: 1/ span 1;
+    grid-column: 1/ span 1;
+  }
+  
+  .pictures-grid div:nth-child(2) {
+    grid-row: 2/ span 1;
+    grid-column: 1/ span 1;
+  }
+  
+  .pictures-grid div:nth-child(3) {
+    grid-row: 3/ span 1;
+    grid-column: 1/ span 1;
+  }
+  
+  .pictures-grid div:nth-child(-2) {
+    grid-row: 4/ span 1;
+    grid-column: 1/ span 1;
+  }
+  
+  .pictures-grid div:last-child {
+    grid-row: 5 / span 1;
+    grid-column: 1/ span 1;
+  }
+}
+
+footer {
+  margin-block-start: 80px;
+  display: flex;
+  height: clamp(667px, 100vh, 1024px);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-block: var(--padding-size);
+}
+
+footer .main-title {
+  text-shadow: 0 2px 0 var(--accent-color);
+  position: static;
+}
+
+/* декоративный элемент в футере */
+footer::before {
+  content: '';
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-end: 1px solid var(--color-decorated);
+  border-block-start: 1px solid var(--color-decorated);
+  position: absolute;
+  inset-inline-end: var(--padding-size);
+  inset-block-start: var(--padding-size);
+  
+}
+
+/* декоративный элемент в футере */
+footer::after {
+  content: '';
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-start: 1px solid var(--color-decorated);
+  border-block-end: 1px solid var(--color-decorated);
+  position: absolute;
+  inset-block-end: var(--padding-size);
+  inset-inline-start: var(--padding-size);
 }
