@@ -8,7 +8,7 @@
   background-color: var(--background-color);
   color: var(--main-text-color);
   font-family: var(--main-text-font);
-  font-size: var(----main-text-size);
+  font-size: var(--main-text-size);
   /* зададим глобальный паддинг всй страницы, который есть в макете*/
   padding: var(--padding-size);
   width: 100%;
@@ -36,6 +36,7 @@
   display: grid;
   width: 100%;
   grid-template-rows: 300px 130px 300px;
+  height: 100vh;
 }
 
 .decorated-element-text {
@@ -166,7 +167,7 @@
 }
 
 .main-content {
-  margin-block-start: 55px;
+  margin-block-start: 40px;
 }
 
 @media (max-width: 380px) {
@@ -386,7 +387,7 @@ img {
 }
 
 footer {
-  margin-block-start: 80px;
+  margin-block-start: calc(var(--no-phone-margin) - var(--padding-size));
   display: flex;
   height: clamp(667px, 100vh, 1024px);
   align-items: center;
