@@ -9,6 +9,8 @@
   --accent-color: #FF8DCB;
   --header-text-color: #353430;
   --color-decorated: #353430;
+  --color-hover: rgba(50, 49, 45, 0.40);
+  --background-img: url('../images/cover-image-light.png');
 }
 
 .page.theme_light .decorated-element-text {
@@ -28,7 +30,9 @@
     --main-text-color: #353430;
     --accent-color: #FF8DCB;
     --header-text-color: #353430;
-    --color-decorated: #353430;   
+    --color-decorated: #353430;
+    --color-hover: rgba(50, 49, 45, 0.40);
+    --background-img: url('../images/cover-image-light.png');   
     }
     
     .page .decorated-element-text {

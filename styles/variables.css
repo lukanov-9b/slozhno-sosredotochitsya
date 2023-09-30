@@ -12,11 +12,6 @@
   --main-text-size: 18px;
   --padding-size: 20px;
   --no-phone-margin: 80px;
-}
-
-@media (max-width: 380px) {
-  body {
-    --no-phone-margin: 50px;
-    --padding-size: 10px;
-  }
+  --color-hover: rgba(255, 0, 112, 0.40);
+  --background-img: url('../images/cover-image-dark.png');
 }

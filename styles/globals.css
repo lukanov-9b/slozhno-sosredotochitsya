@@ -13,6 +13,13 @@ body {
   padding: 0;
 }
 
+@media (max-width: 380px) {
+  body {
+    --no-phone-margin: 50px;
+    --padding-size: 10px;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -22,6 +29,10 @@ h6,
 p,
 section {
   margin: 0;
+}
+
+h4 {
+  font-weight: 400;
 }
 
 ul {
