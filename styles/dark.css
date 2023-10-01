@@ -13,5 +13,8 @@
     --color-decorated: #FF0070;
     --color-hover: rgba(255, 0, 112, 0.40);
     --background-img: url('../images/cover-image-dark.png');
+    --border-color: #FF0070;
+    --main-title-color: #DB00FF;
+    --section-title-color: #FF0070;
     }
 }

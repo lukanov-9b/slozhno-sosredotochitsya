@@ -12,6 +12,12 @@
   /* зададим глобальный паддинг всй страницы, который есть в макете*/
   padding: var(--padding-size);
   width: 100%;
+  /* фон */
+  background-image: var(--background-img);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
 @media(min-width: 1024px) {
@@ -20,13 +26,11 @@
   }
 }
 
-/* фон */
-.page {
- background-image: var(--background-img);
- background-attachment: fixed;
- background-repeat: no-repeat;
- background-size: cover;
- background-position: bottom;
+@media (max-width: 380px) {
+  body {
+    --no-phone-margin: 50px;
+    --padding-size: 10px;
+  }
 }
 
 .header {
@@ -105,7 +109,7 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--border-color);
 }
 
 @media (max-width: 780px) {
@@ -126,7 +130,7 @@
 
 .main-title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
-  color: #DB00FF;
+  color: var(--main-title-color);
   font-weight: 700;
   text-shadow: 4px 4px 0 var(--accent-color);
   align-self: center;
@@ -177,7 +181,7 @@
 }
 
 .section-title {
-  color: var(--accent-color);
+  color: var(--section-title-color);
   font-size: 18px;
   font-weight: 700;
   grid-row: 1/ span 2;
@@ -358,27 +362,25 @@ img {
   }
   
   .pictures-grid img:nth-child(1) {
-    grid-row: 1/ span 1;
     grid-column: 1/ span 1;
   }
   
   .pictures-grid img:nth-child(2) {
     grid-row: 2/ span 1;
-    grid-column: 1/ span 1;
+    grid-column-start: 1;
   }
   
   .pictures-grid img:nth-child(3) {
     grid-row: 3/ span 1;
-    grid-column: 1/ span 1;
   }
   
   .pictures-grid img:nth-child(-2) {
-    grid-row: 4/ span 1;
-    grid-column: 1/ span 1;
+    grid-row-start: 4;
+    grid-column-start: 1;
   }
   
   .pictures-grid img:last-child {
-    grid-row: 5 / span 1;
+    grid-row-start: 5;
     grid-column: 1/ span 1;
   }
 }
@@ -409,7 +411,7 @@ footer::after {
 }
 
 footer::before {
-   border-inline-end: 1px solid var(--color-decorated);
+  border-inline-end: 1px solid var(--color-decorated);
   border-block-start: 1px solid var(--color-decorated);
   inset-inline-end: var(--padding-size);
   inset-block-start: var(--padding-size);
